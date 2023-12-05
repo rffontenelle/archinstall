@@ -7,7 +7,7 @@ function update_lang() {
 
 	echo "Updating: $file"
 	path=$(dirname $file)
-	msgmerge --quiet --no-location --width 512 --backup none --update $file locales/base.pot
+	msgmerge --previous --quiet --no-location --width 512 --backup none --update $file locales/base.pot
 	msgfmt -o $path/base.mo $file
 }
 
